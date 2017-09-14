@@ -29,7 +29,8 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func chooseAvatarPressed(_ sender: UIButton) {
-        
+        print("We will select an avatar.")
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     @IBAction func generateBackgroundColorPressed(_ sender: UIButton) {
