@@ -43,10 +43,11 @@ extension AvatarPickerVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "avatarCell", for: indexPath) as? AvatarCell {
+            return cell
+        }
+        return AvatarCell()
     }
-    
-    
 }
 
 extension AvatarPickerVC: UICollectionViewDelegate {
