@@ -120,7 +120,7 @@
                                 <rect key="frame" x="281" y="83" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jSG-Zx-xFB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jSG-Zx-xFB" customClass="CircleImageView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="JpA-s9-9B7"/>
@@ -434,7 +434,7 @@
                                     <action selector="createAccountButtonPressed:" destination="gqx-JK-egg" eventType="touchUpInside" id="lJ5-vN-Xf9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="two-hY-ERG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="two-hY-ERG" customClass="CircleImageView" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137" y="299" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6Ch-f6-qPG"/>
@@ -452,6 +452,10 @@
                                     <action selector="generateBackgroundColorPressed:" destination="Aed-MI-5sV" eventType="touchUpInside" id="gzE-BJ-Nlm"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d9d-C3-VVl">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -467,12 +471,15 @@
                             <constraint firstItem="9Jf-vB-eK7" firstAttribute="trailing" secondItem="glo-Tz-eot" secondAttribute="trailingMargin" id="R9k-Mv-4YV"/>
                             <constraint firstItem="55J-Wu-eIm" firstAttribute="top" secondItem="iCD-Z8-wUr" secondAttribute="bottom" constant="20" id="VKD-ta-6lj"/>
                             <constraint firstItem="OO2-go-SYt" firstAttribute="top" secondItem="Bdl-F4-I89" secondAttribute="bottom" constant="40" id="azP-HK-Y1V"/>
+                            <constraint firstItem="d9d-C3-VVl" firstAttribute="centerY" secondItem="glo-Tz-eot" secondAttribute="centerY" constant="-100" id="g8v-qd-wv2"/>
                             <constraint firstItem="iCD-Z8-wUr" firstAttribute="centerX" secondItem="glo-Tz-eot" secondAttribute="centerX" id="i26-7j-ez8"/>
                             <constraint firstItem="two-hY-ERG" firstAttribute="centerX" secondItem="glo-Tz-eot" secondAttribute="centerX" id="mlM-lc-XE6"/>
                             <constraint firstItem="OO2-go-SYt" firstAttribute="centerX" secondItem="glo-Tz-eot" secondAttribute="centerX" id="sRb-73-Af7"/>
+                            <constraint firstItem="d9d-C3-VVl" firstAttribute="centerX" secondItem="glo-Tz-eot" secondAttribute="centerX" id="sWp-uo-TeI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="d9d-C3-VVl" id="LxE-Wg-CRt"/>
                         <outlet property="emailTextField" destination="q5z-54-hqd" id="T4d-OK-TRR"/>
                         <outlet property="passwordTextField" destination="Rnn-fu-hQm" id="QYm-E8-6mE"/>
                         <outlet property="userImageView" destination="two-hY-ERG" id="EaU-Bo-1II"/>
