@@ -16,6 +16,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Smack" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="FGc-9Q-bio" id="dWC-lz-tKZ"/>
+                <outlet property="profileImageView" destination="lSG-hi-owF" id="JAZ-kR-LKl"/>
+                <outlet property="userEmailLabel" destination="VCu-qC-JDE" id="ZKa-2v-h2Y"/>
+                <outlet property="usernameLabel" destination="lqD-2b-Ds9" id="pl5-xg-4FO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +38,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-vD-kEE">
                             <rect key="frame" x="299" y="8" width="28" height="28"/>
                             <state key="normal" image="closeButton"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="PNK-wD-9o1"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-iU-8O9">
                             <rect key="frame" x="133.5" y="316" width="68" height="36"/>
@@ -41,6 +48,9 @@
                             <state key="normal" title="Logout">
                                 <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="-1" eventType="touchUpInside" id="ws2-Zd-HJW"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-15-trC">
                             <rect key="frame" x="80" y="55" width="175" height="210.5"/>
@@ -51,7 +61,7 @@
                                     <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-hi-owF">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-hi-owF" customClass="CircleImageView" customModule="Smack" customModuleProvider="target">
                                     <rect key="frame" x="37.5" y="41.5" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="nGS-WM-u5K"/>
@@ -85,7 +95,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QmC-rD-i6T" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4OC-VX-W6N"/>
                 <constraint firstItem="QmC-rD-i6T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9hu-wm-AAn"/>
