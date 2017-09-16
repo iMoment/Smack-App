@@ -26,5 +26,10 @@ class ChatVC: UIViewController {
                 }
             })
         }
+        MessageService.instance.retrieveChannels { (success) in
+            if success {
+                //  TODO: Maybe don't need follow up
+            }
+        }
     }
 }

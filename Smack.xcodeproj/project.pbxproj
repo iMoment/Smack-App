@@ -23,6 +23,7 @@
 		916B532C1F68353200DAC5FA /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B532B1F68353200DAC5FA /* CreateAccountVC.swift */; };
 		9173C02D1F6DC0E3005E62C5 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173C02C1F6DC0E3005E62C5 /* MessageService.swift */; };
 		9173C02F1F6DC122005E62C5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173C02E1F6DC122005E62C5 /* Channel.swift */; };
+		9173C0311F6DC65F005E62C5 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173C0301F6DC65F005E62C5 /* ChannelCell.swift */; };
 		9174E7691F6C30E6009FDF4E /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174E7681F6C30E6009FDF4E /* CircleImageView.swift */; };
 		91881A4E1F6999E400AFE73A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91881A4D1F6999E400AFE73A /* RoundedButton.swift */; };
 		91A09E791F6AB0DC006979D6 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A09E781F6AB0DC006979D6 /* UserDataService.swift */; };
@@ -54,6 +55,7 @@
 		916B532B1F68353200DAC5FA /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9173C02C1F6DC0E3005E62C5 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		9173C02E1F6DC122005E62C5 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		9173C0301F6DC65F005E62C5 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		9174E7681F6C30E6009FDF4E /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		91881A4D1F6999E400AFE73A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		91A09E781F6AB0DC006979D6 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				91881A4D1F6999E400AFE73A /* RoundedButton.swift */,
 				91C78DC41F6AEBB800CE56A5 /* AvatarCell.swift */,
 				9174E7681F6C30E6009FDF4E /* CircleImageView.swift */,
+				9173C0301F6DC65F005E62C5 /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				911D9A5D1F6D26370081B76B /* ProfileVC.swift in Sources */,
+				9173C0311F6DC65F005E62C5 /* ChannelCell.swift in Sources */,
 				915855331F65B9C70035473A /* ChatVC.swift in Sources */,
 				9126108F1F6ADEFD008FDFAC /* AvatarPickerVC.swift in Sources */,
 				9174E7691F6C30E6009FDF4E /* CircleImageView.swift in Sources */,

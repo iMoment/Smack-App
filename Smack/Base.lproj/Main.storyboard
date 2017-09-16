@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="427"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rad-iz-8P1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="Rad-iz-8P1" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rad-iz-8P1" id="CCJ-69-Gvm">
@@ -161,6 +161,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelNameLabel" destination="Fan-Iv-qAQ" id="CMA-DL-TKs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -184,6 +187,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="channelTableView" destination="t6m-Fp-41T" id="hHH-mD-QFq"/>
                         <outlet property="loginButton" destination="kHw-WY-Lcf" id="VD2-mP-bbw"/>
                         <outlet property="menuProfileImageView" destination="jSG-Zx-xFB" id="g63-gW-Cwu"/>
                         <segue destination="gqx-JK-egg" kind="show" identifier="toLogin" id="IG0-e3-vJW"/>
