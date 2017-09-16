@@ -15,10 +15,27 @@ class ChannelVC: UIViewController {
     @IBOutlet weak var menuProfileImageView: CircleImageView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupUserInfo()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
+    func setupUserInfo() {
+        if AuthService.instance.isLoggedIn {
+            loginButton.setTitle(UserDataService.instance.name, for: .normal)
+            menuProfileImageView.image = UIImage(named: UserDataService.instance.avatarName)
+            menuProfileImageView.backgroundColor = UserDataService.instance.returnBackgroundColor(components: UserDataService.instance.avatarColor)
+        } else {
+            loginButton.setTitle("Login", for: .normal)
+            menuProfileImageView.image = UIImage(named: "menuProfileIcon")
+            menuProfileImageView.backgroundColor = .clear
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -32,14 +49,6 @@ class ChannelVC: UIViewController {
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
-        if AuthService.instance.isLoggedIn {
-            loginButton.setTitle(UserDataService.instance.name, for: .normal)
-            menuProfileImageView.image = UIImage(named: UserDataService.instance.avatarName)
-            menuProfileImageView.backgroundColor = UserDataService.instance.returnBackgroundColor(components: UserDataService.instance.avatarColor)
-        } else {
-            loginButton.setTitle("Login", for: .normal)
-            menuProfileImageView.image = UIImage(named: "menuProfileIcon")
-            menuProfileImageView.backgroundColor = .clear
-        }
+        setupUserInfo()
     }
 }
