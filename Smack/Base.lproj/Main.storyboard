@@ -84,6 +84,9 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageTextFieldEditing:" destination="sp3-du-ZHP" eventType="editingChanged" id="Lzb-hF-oXj"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MT-n1-AWf">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
@@ -173,6 +176,7 @@
                         <outlet property="menuButton" destination="acu-NA-xTd" id="mcu-Fp-Uho"/>
                         <outlet property="messageTableView" destination="PzH-ci-yIw" id="XRB-MA-175"/>
                         <outlet property="messageTextField" destination="DCq-PX-mT0" id="pFz-ev-ka9"/>
+                        <outlet property="sendMessageButton" destination="1MT-n1-AWf" id="9nW-PK-Na7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tI-Wx-4hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

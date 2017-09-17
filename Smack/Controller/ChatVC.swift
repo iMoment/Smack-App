@@ -15,6 +15,10 @@ class ChatVC: UIViewController {
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
+    @IBOutlet weak var sendMessageButton: UIButton!
+    
+    //  MARK: Variables
+    var isTyping = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,7 @@ class ChatVC: UIViewController {
         messageTableView.delegate = self
         messageTableView.estimatedRowHeight = 80
         messageTableView.rowHeight = UITableViewAutomaticDimension
+        sendMessageButton.isHidden = true
         
         view.bindToKeyboard()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapToDismissKeyboard(_:)))
@@ -34,12 +39,33 @@ class ChatVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIFICATION_CHANNEL_SELECTED, object: nil)
         
+        SocketService.instance.getChatMessage { (success) in
+            if success {
+                self.messageTableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let endIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.messageTableView.scrollToRow(at: endIndexPath, at: .bottom, animated: false)
+                }
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.retrieveUserByEmail(completion: { (success) in
                 if success {
                     NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
                 }
             })
+        }
+    }
+    @IBAction func messageTextFieldEditing(_ sender: Any) {
+        if messageTextField.text == "" {
+            isTyping = false
+            sendMessageButton.isHidden = true
+        } else {
+            if isTyping == false {
+                sendMessageButton.isHidden = false
+            }
+            isTyping = true
         }
     }
     
@@ -67,6 +93,7 @@ class ChatVC: UIViewController {
             onLoginGetMessages()
         } else {
             channelNameLabel.text = "Please Log In"
+            messageTableView.reloadData()
         }
     }
     
