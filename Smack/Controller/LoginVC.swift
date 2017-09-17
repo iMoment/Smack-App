@@ -11,7 +11,7 @@ import UIKit
 class LoginVC: UIViewController {
     
     //  MARK: Outlets
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
     
     func setupView() {
         activityIndicator.isHidden = true
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [.foregroundColor: smackPurplePlaceholder])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [.foregroundColor: smackPurplePlaceholder])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [.foregroundColor: smackPurplePlaceholder])
     }
     
@@ -34,7 +34,7 @@ class LoginVC: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        guard let email = usernameTextField.text, usernameTextField.text != "" else { return }
+        guard let email = emailTextField.text, emailTextField.text != "" else { return }
         guard let password = passwordTextField.text, passwordTextField.text != "" else { return }
         
         AuthService.instance.logInUser(email: email, password: password) { (success) in

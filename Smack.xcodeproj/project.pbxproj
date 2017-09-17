@@ -31,6 +31,7 @@
 		91CBDDBC1F698613003F9B4D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBDDBB1F698613003F9B4D /* AuthService.swift */; };
 		91DB372E1F6E7E85005CA8B0 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB372C1F6E7E85005CA8B0 /* AddChannelVC.swift */; };
 		91DB372F1F6E7E85005CA8B0 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DB372D1F6E7E85005CA8B0 /* AddChannelVC.xib */; };
+		91DB37311F6E9D87005CA8B0 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB37301F6E9D87005CA8B0 /* SocketService.swift */; };
 		C3648DFBC6775AA9F81D2463 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BF2092F66BF4B53607CCFC /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		91CBDDBB1F698613003F9B4D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		91DB372C1F6E7E85005CA8B0 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		91DB372D1F6E7E85005CA8B0 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		91DB37301F6E9D87005CA8B0 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		B739AF98E41A2FD819B106F2 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 				91CBDDBB1F698613003F9B4D /* AuthService.swift */,
 				91A09E781F6AB0DC006979D6 /* UserDataService.swift */,
 				9173C02C1F6DC0E3005E62C5 /* MessageService.swift */,
+				91DB37301F6E9D87005CA8B0 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DB37311F6E9D87005CA8B0 /* SocketService.swift in Sources */,
 				911D9A5D1F6D26370081B76B /* ProfileVC.swift in Sources */,
 				9173C0311F6DC65F005E62C5 /* ChannelCell.swift in Sources */,
 				915855331F65B9C70035473A /* ChatVC.swift in Sources */,

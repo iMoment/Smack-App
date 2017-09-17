@@ -329,8 +329,8 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Re6-YA-A7k" id="QRU-Qo-Jpi"/>
+                        <outlet property="emailTextField" destination="FUN-nt-7Rc" id="4hR-0U-8By"/>
                         <outlet property="passwordTextField" destination="9kC-a6-5Sm" id="QHS-Gy-1kJ"/>
-                        <outlet property="usernameTextField" destination="FUN-nt-7Rc" id="nqT-xq-cH7"/>
                         <segue destination="Aed-MI-5sV" kind="show" identifier="toCreateAccount" id="UDe-6W-w9W"/>
                     </connections>
                 </viewController>

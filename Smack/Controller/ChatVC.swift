@@ -23,13 +23,20 @@ class ChatVC: UIViewController {
             AuthService.instance.retrieveUserByEmail(completion: { (success) in
                 if success {
                     NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
+                    //  TEST
+                    MessageService.instance.retrieveChannels { (success) in
+                        if success {
+                            //  TODO: Maybe don't need follow up
+                        }
+                    }
+                    //  END TEST
                 }
             })
         }
-        MessageService.instance.retrieveChannels { (success) in
-            if success {
-                //  TODO: Maybe don't need follow up
-            }
-        }
+//        MessageService.instance.retrieveChannels { (success) in
+//            if success {
+//                //  TODO: Maybe don't need follow up
+//            }
+//        }
     }
 }
