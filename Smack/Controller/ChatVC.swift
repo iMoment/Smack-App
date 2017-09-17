@@ -14,9 +14,15 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
     @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var messageTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageTableView.dataSource = self
+        messageTableView.delegate = self
+        messageTableView.estimatedRowHeight = 80
+        messageTableView.rowHeight = UITableViewAutomaticDimension
+        
         view.bindToKeyboard()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapToDismissKeyboard(_:)))
         view.addGestureRecognizer(tapGesture)
@@ -92,13 +98,36 @@ class ChatVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         MessageService.instance.retrieveMessagesForChannel(channelId: channelId) { (success) in
             if success {
-                //  TODO: Something
+                self.messageTableView.reloadData()
             }
         }
     }
 }
 
+extension ChatVC: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+}
 
+extension ChatVC: UITableViewDelegate {
+    
+}
 
 
 
