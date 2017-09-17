@@ -12,6 +12,7 @@ class ChatVC: UIViewController {
 
     //  MARK: Outlets
     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var channelNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,24 +20,53 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
+        NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIFICATION_CHANNEL_SELECTED, object: nil)
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.retrieveUserByEmail(completion: { (success) in
                 if success {
                     NotificationCenter.default.post(name: NOTIFICATION_USER_DATA_DID_CHANGE, object: nil)
-                    //  TEST
-                    MessageService.instance.retrieveChannels { (success) in
-                        if success {
-                            //  TODO: Maybe don't need follow up
-                        }
-                    }
-                    //  END TEST
                 }
             })
         }
-//        MessageService.instance.retrieveChannels { (success) in
-//            if success {
-//                //  TODO: Maybe don't need follow up
-//            }
-//        }
+    }
+    
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+            onLoginGetMessages()
+        } else {
+            channelNameLabel.text = "Please Log In"
+        }
+    }
+    
+    @objc func channelSelected(_ notif: Notification) {
+        updateWithChannel()
+    }
+    
+    func updateWithChannel() {
+        let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
+        channelNameLabel.text = "#\(channelName)"
+    }
+    
+    func onLoginGetMessages() {
+        MessageService.instance.retrieveChannels { (success) in
+            if success {
+                //  TODO: Do stuff with channels
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
