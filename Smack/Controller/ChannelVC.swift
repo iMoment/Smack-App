@@ -42,6 +42,12 @@ class ChannelVC: UIViewController {
         }
     }
     
+    @IBAction func addChannelPressed(_ sender: Any) {
+        let addChannelVC = AddChannelVC()
+        addChannelVC.modalPresentationStyle = .custom
+        self.present(addChannelVC, animated: true, completion: nil)
+    }
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         if AuthService.instance.isLoggedIn {
             let profileVC = ProfileVC()
@@ -79,6 +85,10 @@ extension ChannelVC: UITableViewDataSource {
 
 extension ChannelVC: UITableViewDelegate {
     
+    //  TODO: Implement didSelectRowAtIndexPath
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("We will handle this later.")
+    }
 }
 
 
