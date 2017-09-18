@@ -84,16 +84,3 @@ extension AvatarPickerVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellDimension, height: cellDimension)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

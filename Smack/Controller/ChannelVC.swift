@@ -121,24 +121,3 @@ extension ChannelVC: UITableViewDelegate {
         self.revealViewController().revealToggle(animated: true)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

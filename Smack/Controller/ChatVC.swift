@@ -50,15 +50,6 @@ class ChatVC: UIViewController {
                 }
             }
         }
-//        SocketService.instance.getChatMessage { (success) in
-//            if success {
-//                self.messageTableView.reloadData()
-//                if MessageService.instance.messages.count > 0 {
-//                    let endIndexPath = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-//                    self.messageTableView.scrollToRow(at: endIndexPath, at: .bottom, animated: false)
-//                }
-//            }
-//        }
         
         SocketService.instance.getTypingUsers { (typingUsers) in
             guard let channelId = MessageService.instance.selectedChannel?.id else { return }
@@ -95,6 +86,7 @@ class ChatVC: UIViewController {
             })
         }
     }
+    
     @IBAction func messageTextFieldEditing(_ sender: Any) {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         if messageTextField.text == "" {
@@ -197,14 +189,3 @@ extension ChatVC: UITableViewDataSource {
 extension ChatVC: UITableViewDelegate {
     
 }
-
-
-
-
-
-
-
-
-
-
-

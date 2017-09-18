@@ -54,13 +54,3 @@ class LoginVC: UIViewController {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-

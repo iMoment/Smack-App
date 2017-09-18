@@ -89,16 +89,3 @@ class MessageService {
         channels.removeAll(keepingCapacity: false)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
