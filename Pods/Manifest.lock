@@ -1,8 +1,8 @@
 PODS:
   - Alamofire (4.5.1)
-  - Socket.IO-Client-Swift (12.0.0):
-    - StarscreamSocketIO (~> 8.0.7)
-  - StarscreamSocketIO (8.0.7)
+  - Socket.IO-Client-Swift (12.1.0):
+    - Starscream (~> 2.1.1)
+  - Starscream (2.1.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -12,8 +12,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  Socket.IO-Client-Swift: 5b0154b42b3892bfb4c44fa138cbeb8afec4f6ef
-  StarscreamSocketIO: 00b54e4208481ca5cef089545353aaf126bae16d
+  Socket.IO-Client-Swift: a5cb7180915cc9dcd97a95aed320f546574cf871
+  Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 168657bbd1c9d7f85a3e716337217063025ce276
